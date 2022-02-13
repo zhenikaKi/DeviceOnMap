@@ -1,3 +1,19 @@
 <resources>
     <string name="app_name">Device On Map</string>
+    <string name="location_permission_title">Текущее местоположение</string>
+    <string name="location_permission_text">Приложению необходимо разрешение на получение вашего текущего местоположения для отображения его на карте</string>
+    <string name="location_permission_disable">Вы запретили использовать местоположение. Из-за этого на карте оно не будет показываться. Вы можете вручную разрешить использовать местоположение в настройках телефона.</string>
+    <string name="location_permission_success">Запрос разрешения</string>
+    <string name="location_permission_no_show_again">Больше не показывать</string>
+    <string name="location_permission_close">Закрыть</string>
+    <string name="marker_current_position">Текущее местоположение</string>
+    <string name="app_marker_saved">Сохраненный маркер</string>
+    <string name="app_marker_clicked">Выбранная точка</string>
+    <string name="app_marker_clicked_info">Широта: %1$f, долгота: %2$f</string>
+    <string name="app_marker_save_success">Маркер сохранен и будет показываться на карте</string>
+    <string name="edit_marker_title">Заголовок</string>
+    <string name="edit_marker_description">Описание</string>
+    <string name="marker_edit_title">Редактирование маркера</string>
+    <string name="marker_edit_cancel">Отмена</string>
+    <string name="marker_edit_save">Сохранить</string>
 </resources>

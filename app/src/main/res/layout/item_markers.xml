@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="@dimen/content_padding">
+
+    <!-- Адрес -->
+    <TextView
+        android:id="@+id/address"
+        android:layout_width="@dimen/zero"
+        android:layout_height="wrap_content"
+        android:textStyle="bold|italic"
+        android:textSize="@dimen/title_text_size"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/icon_edit"/>
+
+    <!-- Заголовок -->
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="@dimen/zero"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/description_text_size"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/address"
+        app:layout_constraintEnd_toStartOf="@id/icon_edit"/>
+
+    <!-- Описание -->
+    <TextView
+        android:id="@+id/description"
+        android:layout_width="@dimen/zero"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/description_text_size"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/title"
+        app:layout_constraintEnd_toStartOf="@id/icon_edit"/>
+
+    <!-- Координаты -->
+    <TextView
+        android:id="@+id/point"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textStyle="italic"
+        android:textSize="@dimen/point_text_size"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/icon_delete"/>
+
+    <!-- Кнопка редактирования -->
+    <ImageView
+        android:id="@+id/icon_edit"
+        android:src="@drawable/icon_edit"
+        android:layout_width="@dimen/icon_size"
+        android:layout_height="@dimen/icon_size"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/icon_delete"/>
+
+    <!-- Кнопка удаления -->
+    <ImageView
+        android:id="@+id/icon_delete"
+        android:src="@drawable/icon_delete"
+        android:layout_width="@dimen/icon_size"
+        android:layout_height="@dimen/icon_size"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+</androidx.constraintlayout.widget.ConstraintLayout>
