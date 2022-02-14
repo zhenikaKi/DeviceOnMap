@@ -8,6 +8,7 @@
 --- 
 ### Стек
 - Kotlin
+- LiveData, ViewModel
 - Cicerone
 - Coroutines
 - Room
