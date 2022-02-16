@@ -1,7 +1,11 @@
 plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
+    id 'kotlin-kapt'
 }
+
+Properties properties = new Properties()
+properties.load(project.rootProject.file("local.properties").newDataInputStream())
 
 android {
     compileSdk 31
@@ -12,6 +16,12 @@ android {
         targetSdk 31
         versionCode 1
         versionName "1.0"
+
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments += ["room.schemaLocation": "$projectDir/schemas".toString()]
+            }
+        }
     }
 
     buildTypes {
@@ -29,11 +39,22 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
+
+    buildFeatures {
+        viewBinding true
+    }
+
+    buildTypes.each {
+        it.resValue "string", "GOOGLE_MAP_API_KEY", properties.getProperty("googleMapApiKey", "")
+    }
 }
 
 dependencies {
     implementation 'androidx.appcompat:appcompat:1.4.1'
     implementation 'com.google.android.material:material:1.5.0'
+    implementation 'com.google.android.gms:play-services-maps:18.0.2'
+    implementation 'com.google.android.gms:play-services-location:19.0.1'
+    implementation 'androidx.recyclerview:recyclerview:1.2.1'
 
     //Kotlin
     implementation 'androidx.core:core-ktx:1.7.0'
@@ -48,4 +69,9 @@ dependencies {
     //Koin
     implementation 'io.insert-koin:koin-core:3.1.2'
     implementation 'io.insert-koin:koin-android:3.1.2'
+
+    //Room
+    implementation 'androidx.room:room-ktx:2.4.1'
+    implementation 'androidx.room:room-runtime:2.4.1'
+    kapt('androidx.room:room-compiler:2.4.1')
 }
